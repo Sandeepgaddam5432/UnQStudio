@@ -1,0 +1,75 @@
+name: Prebuild for Render
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 1) Install pnpm first (using the version in your package.json)
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      # 2) Now you can safely enable pnpm caching in setup-node
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Increase Node memory
+        run: echo "NODE_OPTIONS=--max-old-space-size=6144" >> $GITHUB_ENV
+
+      - name: Build (Vite/Remix)
+        run: pnpm run build
+
+      - name: Verify client build exists
+        run: test -d build/client && ls -la build/client
+
+      - name: Verify server build exists
+        run: test -f build/server/index.js && ls -la build/server
+
+      - name: Publish runtime bundle to render-build branch
+        shell: bash
+        run: |
+          set -e
+          rm -rf /tmp/render-build
+          mkdir -p /tmp/render-build
+              cp package.json pnpm-lock.yaml /tmp/render-build/
+          cp -R build /tmp/render-build/build
+          cp server.js /tmp/render-build/
+
+          cat > /tmp/render-build/start.sh <<'EOF'
+          #!/usr/bin/env bash
+          set -e
+          node server.js
+          EOF
+          chmod +x /tmp/render-build/start.sh
+
+          cd /tmp/render-build
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publish runtime bundle"
+          git branch -M render-build
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push -f origin render-build
+
