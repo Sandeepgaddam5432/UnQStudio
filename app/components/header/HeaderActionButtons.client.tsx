@@ -11,6 +11,8 @@ import { NetlifyDeploymentLink } from '~/components/chat/NetlifyDeploymentLink.c
 import { VercelDeploymentLink } from '~/components/chat/VercelDeploymentLink.client';
 import { useVercelDeploy } from '~/components/deploy/VercelDeploy.client';
 import { useNetlifyDeploy } from '~/components/deploy/NetlifyDeploy.client';
+import { useGitHubDeploy } from '~/components/deploy/GitHubDeploy.client';
+import { GitHubDeploymentDialog } from '~/components/deploy/GitHubDeploymentDialog';
 
 interface HeaderActionButtonsProps {}
 
@@ -23,7 +25,7 @@ export function HeaderActionButtons({}: HeaderActionButtonsProps) {
   const previews = useStore(workbenchStore.previews);
   const activePreview = previews[activePreviewIndex];
   const [isDeploying, setIsDeploying] = useState(false);
-  const [deployingTo, setDeployingTo] = useState<'netlify' | 'vercel' | null>(null);
+  const [deployingTo, setDeployingTo] = useState<'netlify' | 'vercel' | 'github' | null>(null);
   const isSmallViewport = useViewport(1024);
   const canHideChat = showWorkbench || !showChat;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -31,6 +33,10 @@ export function HeaderActionButtons({}: HeaderActionButtonsProps) {
   const isStreaming = useStore(streamingState);
   const { handleVercelDeploy } = useVercelDeploy();
   const { handleNetlifyDeploy } = useNetlifyDeploy();
+  const { handleGitHubDeploy, isConnected: isGitHubConnected } = useGitHubDeploy();
+  const [showGitHubDeploymentDialog, setShowGitHubDeploymentDialog] = useState(false);
+  const [githubDeploymentFiles, setGithubDeploymentFiles] = useState<Record<string, string> | null>(null);
+  const [githubProjectName, setGithubProjectName] = useState('');
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -61,6 +67,24 @@ export function HeaderActionButtons({}: HeaderActionButtonsProps) {
 
     try {
       await handleNetlifyDeploy();
+    } finally {
+      setIsDeploying(false);
+      setDeployingTo(null);
+    }
+  };
+  
+  const onGitHubDeploy = async () => {
+    setIsDeploying(true);
+    setDeployingTo('github');
+
+    try {
+      const result = await handleGitHubDeploy();
+      
+      if (result && result.success && result.files) {
+        setGithubDeploymentFiles(result.files);
+        setGithubProjectName(result.projectName);
+        setShowGitHubDeploymentDialog(true);
+      }
     } finally {
       setIsDeploying(false);
       setDeployingTo(null);
@@ -128,6 +152,25 @@ export function HeaderActionButtons({}: HeaderActionButtonsProps) {
               {vercelConn.user && <VercelDeploymentLink />}
             </Button>
             <Button
+              active
+              onClick={() => {
+                onGitHubDeploy();
+                setIsDropdownOpen(false);
+              }}
+              disabled={isDeploying || !activePreview}
+              className="flex items-center w-full px-4 py-2 text-sm text-bolt-elements-textPrimary hover:bg-bolt-elements-item-backgroundActive gap-2 rounded-md group relative"
+            >
+              <img
+                className="w-5 h-5"
+                height="24"
+                width="24"
+                crossOrigin="anonymous"
+                src="https://cdn.simpleicons.org/github"
+                alt="github"
+              />
+              <span className="mx-auto">Deploy to GitHub</span>
+            </Button>
+            <Button
               active={false}
               disabled
               className="flex items-center w-full rounded-md px-4 py-2 text-sm text-bolt-elements-textTertiary gap-2"
@@ -172,6 +215,16 @@ export function HeaderActionButtons({}: HeaderActionButtonsProps) {
           <div className="i-ph:code-bold" />
         </Button>
       </div>
+      
+      {/* GitHub Deployment Dialog */}
+      {showGitHubDeploymentDialog && githubDeploymentFiles && (
+        <GitHubDeploymentDialog 
+          isOpen={showGitHubDeploymentDialog}
+          onClose={() => setShowGitHubDeploymentDialog(false)}
+          projectName={githubProjectName}
+          files={githubDeploymentFiles}
+        />
+      )}
     </div>
   );
 }
