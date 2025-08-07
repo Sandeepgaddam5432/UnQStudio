@@ -2,11 +2,8 @@ import { globSync } from 'fast-glob';
 import fs from 'node:fs/promises';
 import { basename } from 'node:path';
 import { defineConfig, presetIcons, presetUno, transformerDirectives } from 'unocss';
-
 const iconPaths = globSync('./icons/*.svg');
-
 const collectionName = 'bolt';
-
 const customIconCollection = iconPaths.reduce(
   (acc, iconPath) => {
     const [iconName] = basename(iconPath).split('.');
@@ -269,9 +266,7 @@ function generateAlphaPalette(hex: string) {
       const alpha = Math.round((opacity / 100) * 255)
         .toString(16)
         .padStart(2, '0');
-
       acc[opacity] = `${hex}${alpha}`;
-
       return acc;
     },
     {} as Record<number, string>,
