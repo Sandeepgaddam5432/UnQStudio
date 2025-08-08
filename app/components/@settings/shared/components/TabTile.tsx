@@ -49,9 +49,9 @@ export const TabTile: React.FC<TabTileProps> = ({
                   'relative flex flex-col items-center justify-center h-full p-4 rounded-lg',
                   'bg-white dark:bg-[#141414]',
                   'group cursor-pointer',
-                  'hover:bg-purple-50 dark:hover:bg-[#1a1a1a]',
+                  'hover:bg-unq-elements-item-backgroundAccent dark:hover:bg-[#1a1a1a]',
                   'transition-colors duration-100 ease-out',
-                  isActive ? 'bg-purple-500/5 dark:bg-purple-500/10' : '',
+                  isActive ? 'bg-[var(--unq-elements-button-primary-background)]/5 dark:bg-[var(--unq-elements-button-primary-background)]/10' : '',
                   isLoading ? 'cursor-wait opacity-70 pointer-events-none' : '',
                 )}
               >
@@ -67,7 +67,7 @@ export const TabTile: React.FC<TabTileProps> = ({
                     'group-hover:bg-purple-100 dark:group-hover:bg-gray-700/80',
                     'group-hover:ring-purple-200 dark:group-hover:ring-purple-800/30',
                     'transition-all duration-100 ease-out',
-                    isActive ? 'bg-purple-500/10 dark:bg-purple-500/10 ring-purple-500/30 dark:ring-purple-500/20' : '',
+                    isActive ? 'bg-[var(--unq-elements-button-primary-background)]/10 dark:bg-[var(--unq-elements-button-primary-background)]/10 ring-purple-500/30 dark:ring-purple-500/20' : '',
                   )}
                 >
                   <div
@@ -75,9 +75,9 @@ export const TabTile: React.FC<TabTileProps> = ({
                       TAB_ICONS[tab.id],
                       'w-8 h-8',
                       'text-gray-600 dark:text-gray-300',
-                      'group-hover:text-purple-500 dark:group-hover:text-purple-400/80',
+                      'group-hover:text-[var(--unq-elements-item-contentAccent)] dark:group-hover:text-[var(--unq-elements-item-contentAccent)]/80',
                       'transition-colors duration-100 ease-out',
-                      isActive ? 'text-purple-500 dark:text-purple-400/90' : '',
+                      isActive ? 'text-[var(--unq-elements-item-contentAccent)] dark:text-[var(--unq-elements-item-contentAccent)]/90' : '',
                     )}
                   />
                 </div>
@@ -88,9 +88,9 @@ export const TabTile: React.FC<TabTileProps> = ({
                     className={classNames(
                       'text-[15px] font-medium leading-snug mb-2',
                       'text-gray-700 dark:text-gray-200',
-                      'group-hover:text-purple-600 dark:group-hover:text-purple-300/90',
+                      'group-hover:text-[var(--unq-elements-item-contentAccent)] dark:group-hover:text-[var(--unq-elements-item-contentAccent)]/90',
                       'transition-colors duration-100 ease-out',
-                      isActive ? 'text-purple-500 dark:text-purple-400/90' : '',
+                      isActive ? 'text-[var(--unq-elements-item-contentAccent)] dark:text-[var(--unq-elements-item-contentAccent)]/90' : '',
                     )}
                   >
                     {TAB_LABELS[tab.id]}
@@ -102,9 +102,9 @@ export const TabTile: React.FC<TabTileProps> = ({
                         'text-gray-500 dark:text-gray-400',
                         'max-w-[85%]',
                         'text-center',
-                        'group-hover:text-purple-500 dark:group-hover:text-purple-400/70',
+                        'group-hover:text-[var(--unq-elements-item-contentAccent)] dark:group-hover:text-[var(--unq-elements-item-contentAccent)]/70',
                         'transition-colors duration-100 ease-out',
-                        isActive ? 'text-purple-400 dark:text-purple-400/80' : '',
+                        isActive ? 'text-[var(--unq-elements-item-contentAccent)] dark:text-[var(--unq-elements-item-contentAccent)]/80' : '',
                       )}
                     >
                       {description}
@@ -115,7 +115,7 @@ export const TabTile: React.FC<TabTileProps> = ({
                 {/* Update Indicator with Tooltip */}
                 {hasUpdate && (
                   <>
-                    <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-purple-500 dark:bg-purple-400 animate-pulse" />
+                    <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[var(--unq-elements-button-primary-background)] dark:bg-purple-400 animate-pulse" />
                     <Tooltip.Portal>
                       <Tooltip.Content
                         className={classNames(

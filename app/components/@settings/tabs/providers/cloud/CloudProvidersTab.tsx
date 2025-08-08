@@ -143,20 +143,20 @@ const CloudProvidersTab = () => {
             <div
               className={classNames(
                 'w-8 h-8 flex items-center justify-center rounded-lg',
-                'bg-bolt-elements-background-depth-3',
-                'text-purple-500',
+                'bg-unq-elements-background-depth-3',
+                'text-[var(--unq-elements-item-contentAccent)]',
               )}
             >
               <TbCloudComputing className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-md font-medium text-bolt-elements-textPrimary">Cloud Providers</h4>
-              <p className="text-sm text-bolt-elements-textSecondary">Connect to cloud-based AI models and services</p>
+              <h4 className="text-md font-medium text-unq-elements-textPrimary">Cloud Providers</h4>
+              <p className="text-sm text-unq-elements-textSecondary">Connect to cloud-based AI models and services</p>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-sm text-bolt-elements-textSecondary">Enable All Cloud</span>
+            <span className="text-sm text-unq-elements-textSecondary">Enable All Cloud</span>
             <Switch checked={categoryEnabled} onCheckedChange={handleToggleCategory} />
           </div>
         </div>
@@ -166,9 +166,9 @@ const CloudProvidersTab = () => {
             <motion.div
               key={provider.name}
               className={classNames(
-                'rounded-lg border bg-bolt-elements-background text-bolt-elements-textPrimary shadow-sm',
-                'bg-bolt-elements-background-depth-2',
-                'hover:bg-bolt-elements-background-depth-3',
+                'rounded-lg border bg-unq-elements-background text-unq-elements-textPrimary shadow-sm',
+                'bg-unq-elements-background-depth-2',
+                'hover:bg-unq-elements-background-depth-3',
                 'transition-all duration-200',
                 'relative overflow-hidden group',
                 'flex flex-col',
@@ -181,7 +181,7 @@ const CloudProvidersTab = () => {
               <div className="absolute top-0 right-0 p-2 flex gap-1">
                 {URL_CONFIGURABLE_PROVIDERS.includes(provider.name) && (
                   <motion.span
-                    className="px-2 py-0.5 text-xs rounded-full bg-purple-500/10 text-purple-500 font-medium"
+                    className="px-2 py-0.5 text-xs rounded-full bg-[var(--unq-elements-button-primary-background)]/10 text-[var(--unq-elements-item-contentAccent)] font-medium"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -194,9 +194,9 @@ const CloudProvidersTab = () => {
                 <motion.div
                   className={classNames(
                     'w-10 h-10 flex items-center justify-center rounded-xl',
-                    'bg-bolt-elements-background-depth-3 group-hover:bg-bolt-elements-background-depth-4',
+                    'bg-unq-elements-background-depth-3 group-hover:bg-unq-elements-background-depth-4',
                     'transition-all duration-200',
-                    provider.settings.enabled ? 'text-purple-500' : 'text-bolt-elements-textSecondary',
+                    provider.settings.enabled ? 'text-[var(--unq-elements-item-contentAccent)]' : 'text-unq-elements-textSecondary',
                   )}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -212,10 +212,10 @@ const CloudProvidersTab = () => {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between gap-4 mb-2">
                     <div>
-                      <h4 className="text-sm font-medium text-bolt-elements-textPrimary group-hover:text-purple-500 transition-colors">
+                      <h4 className="text-sm font-medium text-unq-elements-textPrimary group-hover:text-[var(--unq-elements-item-contentAccent)] transition-colors">
                         {provider.name}
                       </h4>
-                      <p className="text-xs text-bolt-elements-textSecondary mt-0.5">
+                      <p className="text-xs text-unq-elements-textSecondary mt-0.5">
                         {PROVIDER_DESCRIPTIONS[provider.name as keyof typeof PROVIDER_DESCRIPTIONS] ||
                           (URL_CONFIGURABLE_PROVIDERS.includes(provider.name)
                             ? 'Configure custom endpoint for this provider'
@@ -243,8 +243,8 @@ const CloudProvidersTab = () => {
                             placeholder={`Enter ${provider.name} base URL`}
                             className={classNames(
                               'flex-1 px-3 py-1.5 rounded-lg text-sm',
-                              'bg-bolt-elements-background-depth-3 border border-bolt-elements-borderColor',
-                              'text-bolt-elements-textPrimary placeholder-bolt-elements-textTertiary',
+                              'bg-unq-elements-background-depth-3 border border-unq-elements-borderColor',
+                              'text-unq-elements-textPrimary placeholder-unq-elements-textTertiary',
                               'focus:outline-none focus:ring-2 focus:ring-purple-500/30',
                               'transition-all duration-200',
                             )}
@@ -263,9 +263,9 @@ const CloudProvidersTab = () => {
                             className="flex-1 px-3 py-1.5 rounded-lg text-sm cursor-pointer group/url"
                             onClick={() => setEditingProvider(provider.name)}
                           >
-                            <div className="flex items-center gap-2 text-bolt-elements-textSecondary">
+                            <div className="flex items-center gap-2 text-unq-elements-textSecondary">
                               <div className="i-ph:link text-sm" />
-                              <span className="group-hover/url:text-purple-500 transition-colors">
+                              <span className="group-hover/url:text-[var(--unq-elements-item-contentAccent)] transition-colors">
                                 {provider.settings.baseUrl || 'Click to set base URL'}
                               </span>
                             </div>

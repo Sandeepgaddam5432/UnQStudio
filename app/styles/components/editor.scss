@@ -1,135 +1,135 @@
 :root {
-  --cm-backgroundColor: var(--bolt-elements-editor-backgroundColor, var(--bolt-elements-bg-depth-1));
-  --cm-textColor: var(--bolt-elements-editor-textColor, var(--bolt-elements-textPrimary));
+--cm-backgroundColor: var(--unq-elements-editor-backgroundColor, var(--unq-elements-bg-depth-1));
+--cm-textColor: var(--unq-elements-editor-textColor, var(--unq-elements-textPrimary));
 
   /* Gutter */
 
-  --cm-gutter-backgroundColor: var(--bolt-elements-editor-gutter-backgroundColor, var(--cm-backgroundColor));
-  --cm-gutter-textColor: var(--bolt-elements-editor-gutter-textColor, var(--bolt-elements-textSecondary));
-  --cm-gutter-activeLineTextColor: var(--bolt-elements-editor-gutter-activeLineTextColor, var(--cm-gutter-textColor));
+--cm-gutter-backgroundColor: var(--unq-elements-editor-gutter-backgroundColor, var(--cm-backgroundColor));
+--cm-gutter-textColor: var(--unq-elements-editor-gutter-textColor, var(--unq-elements-textSecondary));
+--cm-gutter-activeLineTextColor: var(--unq-elements-editor-gutter-activeLineTextColor, var(--cm-gutter-textColor));
 
   /* Fold Gutter */
 
-  --cm-foldGutter-textColor: var(--bolt-elements-editor-foldGutter-textColor, var(--cm-gutter-textColor));
-  --cm-foldGutter-textColorHover: var(--bolt-elements-editor-foldGutter-textColorHover, var(--cm-gutter-textColor));
+--cm-foldGutter-textColor: var(--unq-elements-editor-foldGutter-textColor, var(--cm-gutter-textColor));
+--cm-foldGutter-textColorHover: var(--unq-elements-editor-foldGutter-textColorHover, var(--cm-gutter-textColor));
 
   /* Active Line */
 
-  --cm-activeLineBackgroundColor: var(--bolt-elements-editor-activeLineBackgroundColor, rgb(224 231 235 / 30%));
+--cm-activeLineBackgroundColor: var(--unq-elements-editor-activeLineBackgroundColor, rgb(224 231 235 / 30%));
 
   /* Cursor */
 
   --cm-cursor-width: 2px;
-  --cm-cursor-backgroundColor: var(--bolt-elements-editor-cursorColor, var(--bolt-elements-textSecondary));
+--cm-cursor-backgroundColor: var(--unq-elements-editor-cursorColor, var(--unq-elements-textSecondary));
 
   /* Matching Brackets */
 
-  --cm-matching-bracket: var(--bolt-elements-editor-matchingBracketBackgroundColor, rgb(50 140 130 / 0.3));
+--cm-matching-bracket: var(--unq-elements-editor-matchingBracketBackgroundColor, rgb(50 140 130 / 0.3));
 
   /* Selection */
 
-  --cm-selection-backgroundColorFocused: var(--bolt-elements-editor-selection-backgroundColor, #42b4ff);
-  --cm-selection-backgroundOpacityFocused: var(--bolt-elements-editor-selection-backgroundOpacity, 0.3);
-  --cm-selection-backgroundColorBlured: var(--bolt-elements-editor-selection-inactiveBackgroundColor, #c9e9ff);
-  --cm-selection-backgroundOpacityBlured: var(--bolt-elements-editor-selection-inactiveBackgroundOpacity, 0.3);
+--cm-selection-backgroundColorFocused: var(--unq-elements-editor-selection-backgroundColor, #42b4ff);
+--cm-selection-backgroundOpacityFocused: var(--unq-elements-editor-selection-backgroundOpacity, 0.3);
+--cm-selection-backgroundColorBlured: var(--unq-elements-editor-selection-inactiveBackgroundColor, #c9e9ff);
+--cm-selection-backgroundOpacityBlured: var(--unq-elements-editor-selection-inactiveBackgroundOpacity, 0.3);
 
   /* Panels */
 
-  --cm-panels-borderColor: var(--bolt-elements-editor-panels-borderColor, var(--bolt-elements-borderColor));
+--cm-panels-borderColor: var(--unq-elements-editor-panels-borderColor, var(--unq-elements-borderColor));
 
   /* Search */
 
-  --cm-search-backgroundColor: var(--bolt-elements-editor-search-backgroundColor, var(--cm-backgroundColor));
-  --cm-search-textColor: var(--bolt-elements-editor-search-textColor, var(--bolt-elements-textSecondary));
-  --cm-search-closeButton-backgroundColor: var(--bolt-elements-editor-search-closeButton-backgroundColor, transparent);
+--cm-search-backgroundColor: var(--unq-elements-editor-search-backgroundColor, var(--cm-backgroundColor));
+--cm-search-textColor: var(--unq-elements-editor-search-textColor, var(--unq-elements-textSecondary));
+--cm-search-closeButton-backgroundColor: var(--unq-elements-editor-search-closeButton-backgroundColor, transparent);
 
   --cm-search-closeButton-backgroundColorHover: var(
-    --bolt-elements-editor-search-closeButton-backgroundColorHover,
-    var(--bolt-elements-item-backgroundActive)
+--unq-elements-editor-search-closeButton-backgroundColorHover,
+var(--unq-elements-item-backgroundActive)
   );
 
   --cm-search-closeButton-textColor: var(
-    --bolt-elements-editor-search-closeButton-textColor,
-    var(--bolt-elements-item-contentDefault)
+--unq-elements-editor-search-closeButton-textColor,
+var(--unq-elements-item-contentDefault)
   );
 
   --cm-search-closeButton-textColorHover: var(
-    --bolt-elements-editor-search-closeButton-textColorHover,
-    var(--bolt-elements-item-contentActive)
+--unq-elements-editor-search-closeButton-textColorHover,
+var(--unq-elements-item-contentActive)
   );
 
   --cm-search-button-backgroundColor: var(
-    --bolt-elements-editor-search-button-backgroundColor,
-    var(--bolt-elements-item-backgroundDefault)
+--unq-elements-editor-search-button-backgroundColor,
+var(--unq-elements-item-backgroundDefault)
   );
 
   --cm-search-button-backgroundColorHover: var(
-    --bolt-elements-editor-search-button-backgroundColorHover,
-    var(--bolt-elements-item-backgroundActive)
+--unq-elements-editor-search-button-backgroundColorHover,
+var(--unq-elements-item-backgroundActive)
   );
 
-  --cm-search-button-textColor: var(--bolt-elements-editor-search-button-textColor, var(--bolt-elements-textSecondary));
+--cm-search-button-textColor: var(--unq-elements-editor-search-button-textColor, var(--unq-elements-textSecondary));
 
   --cm-search-button-textColorHover: var(
-    --bolt-elements-editor-search-button-textColorHover,
-    var(--bolt-elements-textPrimary)
+--unq-elements-editor-search-button-textColorHover,
+var(--unq-elements-textPrimary)
   );
 
-  --cm-search-button-borderColor: var(--bolt-elements-editor-search-button-borderColor, transparent);
-  --cm-search-button-borderColorHover: var(--bolt-elements-editor-search-button-borderColorHover, transparent);
+--cm-search-button-borderColor: var(--unq-elements-editor-search-button-borderColor, transparent);
+--cm-search-button-borderColorHover: var(--unq-elements-editor-search-button-borderColorHover, transparent);
 
   --cm-search-button-borderColorFocused: var(
-    --bolt-elements-editor-search-button-borderColorFocused,
-    var(--bolt-elements-borderColorActive)
+--unq-elements-editor-search-button-borderColorFocused,
+var(--unq-elements-borderColorActive)
   );
 
-  --cm-search-input-backgroundColor: var(--bolt-elements-editor-search-input-backgroundColor, transparent);
-  --cm-search-input-textColor: var(--bolt-elements-editor-search-input-textColor, var(--bolt-elements-textPrimary));
-  --cm-search-input-borderColor: var(--bolt-elements-editor-search-input-borderColor, var(--bolt-elements-borderColor));
+--cm-search-input-backgroundColor: var(--unq-elements-editor-search-input-backgroundColor, transparent);
+--cm-search-input-textColor: var(--unq-elements-editor-search-input-textColor, var(--unq-elements-textPrimary));
+--cm-search-input-borderColor: var(--unq-elements-editor-search-input-borderColor, var(--unq-elements-borderColor));
 
   --cm-search-input-borderColorFocused: var(
-    --bolt-elements-editor-search-input-borderColorFocused,
-    var(--bolt-elements-borderColorActive)
+--unq-elements-editor-search-input-borderColorFocused,
+var(--unq-elements-borderColorActive)
   );
 
   /* Tooltip */
 
-  --cm-tooltip-backgroundColor: var(--bolt-elements-editor-tooltip-backgroundColor, var(--cm-backgroundColor));
-  --cm-tooltip-textColor: var(--bolt-elements-editor-tooltip-textColor, var(--bolt-elements-textPrimary));
+--cm-tooltip-backgroundColor: var(--unq-elements-editor-tooltip-backgroundColor, var(--cm-backgroundColor));
+--cm-tooltip-textColor: var(--unq-elements-editor-tooltip-textColor, var(--unq-elements-textPrimary));
 
   --cm-tooltip-backgroundColorSelected: var(
-    --bolt-elements-editor-tooltip-backgroundColorSelected,
+--unq-elements-editor-tooltip-backgroundColorSelected,
     theme('colors.alpha.accent.30')
   );
 
   --cm-tooltip-textColorSelected: var(
-    --bolt-elements-editor-tooltip-textColorSelected,
-    var(--bolt-elements-textPrimary)
+--unq-elements-editor-tooltip-textColorSelected,
+var(--unq-elements-textPrimary)
   );
 
-  --cm-tooltip-borderColor: var(--bolt-elements-editor-tooltip-borderColor, var(--bolt-elements-borderColor));
+--cm-tooltip-borderColor: var(--unq-elements-editor-tooltip-borderColor, var(--unq-elements-borderColor));
 
-  --cm-searchMatch-backgroundColor: var(--bolt-elements-editor-searchMatch-backgroundColor, rgba(234, 92, 0, 0.33));
+--cm-searchMatch-backgroundColor: var(--unq-elements-editor-searchMatch-backgroundColor, rgba(234, 92, 0, 0.33));
 }
 
 html[data-theme='light'] {
-  --bolt-elements-editor-gutter-textColor: #237893;
-  --bolt-elements-editor-gutter-activeLineTextColor: var(--bolt-elements-textPrimary);
-  --bolt-elements-editor-foldGutter-textColorHover: var(--bolt-elements-textPrimary);
-  --bolt-elements-editor-activeLineBackgroundColor: rgb(50 53 63 / 5%);
-  --bolt-elements-editor-tooltip-backgroundColorSelected: theme('colors.alpha.accent.20');
-  --bolt-elements-editor-search-button-backgroundColor: theme('colors.gray.100');
-  --bolt-elements-editor-search-button-backgroundColorHover: theme('colors.alpha.gray.10');
+--unq-elements-editor-gutter-textColor: #237893;
+--unq-elements-editor-gutter-activeLineTextColor: var(--unq-elements-textPrimary);
+--unq-elements-editor-foldGutter-textColorHover: var(--unq-elements-textPrimary);
+  --unq-elements-editor-activeLineBackgroundColor: rgb(50 53 63 / 5%);
+  --unq-elements-editor-tooltip-backgroundColorSelected: theme('colors.alpha.accent.20');
+  --unq-elements-editor-search-button-backgroundColor: theme('colors.gray.100');
+  --unq-elements-editor-search-button-backgroundColorHover: theme('colors.alpha.gray.10');
 }
 
 html[data-theme='dark'] {
-  --cm-backgroundColor: var(--bolt-elements-bg-depth-2);
-  --bolt-elements-editor-gutter-textColor: var(--bolt-elements-textTertiary);
-  --bolt-elements-editor-gutter-activeLineTextColor: var(--bolt-elements-textSecondary);
-  --bolt-elements-editor-selection-inactiveBackgroundOpacity: 0.3;
-  --bolt-elements-editor-activeLineBackgroundColor: rgb(50 53 63 / 50%);
-  --bolt-elements-editor-foldGutter-textColorHover: var(--bolt-elements-textPrimary);
-  --bolt-elements-editor-matchingBracketBackgroundColor: rgba(66, 180, 255, 0.3);
-  --bolt-elements-editor-search-button-backgroundColor: theme('colors.gray.800');
-  --bolt-elements-editor-search-button-backgroundColorHover: theme('colors.alpha.white.10');
+--cm-backgroundColor: var(--unq-elements-bg-depth-2);
+--unq-elements-editor-gutter-textColor: var(--unq-elements-textTertiary);
+--unq-elements-editor-gutter-activeLineTextColor: var(--unq-elements-textSecondary);
+  --unq-elements-editor-selection-inactiveBackgroundOpacity: 0.3;
+  --unq-elements-editor-activeLineBackgroundColor: rgb(50 53 63 / 50%);
+--unq-elements-editor-foldGutter-textColorHover: var(--unq-elements-textPrimary);
+--unq-elements-editor-matchingBracketBackgroundColor: rgba(66, 180, 255, 0.3);
+--unq-elements-editor-search-button-backgroundColor: theme('colors.gray.800');
+--unq-elements-editor-search-button-backgroundColorHover: theme('colors.alpha.white.10');
 }

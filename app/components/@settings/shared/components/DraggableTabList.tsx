@@ -86,12 +86,12 @@ const DraggableTabItem = ({
     >
       <div className="flex items-center gap-4">
         <div className="cursor-grab">
-          <div className="i-ph:dots-six-vertical w-4 h-4 text-bolt-elements-textSecondary" />
+          <div className="i-ph:dots-six-vertical w-4 h-4 text-unq-elements-textSecondary" />
         </div>
         <div>
-          <div className="font-medium text-bolt-elements-textPrimary">{TAB_LABELS[tab.id]}</div>
+          <div className="font-medium text-unq-elements-textPrimary">{TAB_LABELS[tab.id]}</div>
           {showControls && (
-            <div className="text-xs text-bolt-elements-textSecondary">
+            <div className="text-xs text-unq-elements-textSecondary">
               Order: {tab.order}, Window: {tab.window}
             </div>
           )}
@@ -103,20 +103,20 @@ const DraggableTabItem = ({
             <Switch
               checked={tab.visible}
               onCheckedChange={(checked: boolean) => onVisibilityChange?.(tab, checked)}
-              className="data-[state=checked]:bg-purple-500"
+              className="data-[state=checked]:bg-[var(--unq-elements-button-primary-background)]"
               aria-label={`Toggle ${TAB_LABELS[tab.id]} visibility`}
             />
-            <label className="text-sm text-bolt-elements-textSecondary">Visible</label>
+            <label className="text-sm text-unq-elements-textSecondary">Visible</label>
           </div>
           <div className="flex items-center gap-2">
-            <label className="text-sm text-bolt-elements-textSecondary">User</label>
+            <label className="text-sm text-unq-elements-textSecondary">User</label>
             <Switch
               checked={tab.window === 'developer'}
               onCheckedChange={(checked: boolean) => onWindowChange?.(tab, checked ? 'developer' : 'user')}
-              className="data-[state=checked]:bg-purple-500"
+              className="data-[state=checked]:bg-[var(--unq-elements-button-primary-background)]"
               aria-label={`Toggle ${TAB_LABELS[tab.id]} window assignment`}
             />
-            <label className="text-sm text-bolt-elements-textSecondary">Dev</label>
+            <label className="text-sm text-unq-elements-textSecondary">Dev</label>
           </div>
         </div>
       )}

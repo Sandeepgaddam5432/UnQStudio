@@ -7,8 +7,8 @@ const ARTIFACT_TAG_OPEN = '<boltArtifact';
 const ARTIFACT_TAG_CLOSE = '</boltArtifact>';
 const ARTIFACT_ACTION_TAG_OPEN = '<boltAction';
 const ARTIFACT_ACTION_TAG_CLOSE = '</boltAction>';
-const BOLT_QUICK_ACTIONS_OPEN = '<bolt-quick-actions>';
-const BOLT_QUICK_ACTIONS_CLOSE = '</bolt-quick-actions>';
+const BOLT_QUICK_ACTIONS_OPEN = '<UnQStudio-quick-actions>';
+const BOLT_QUICK_ACTIONS_CLOSE = '</UnQStudio-quick-actions>';
 
 const logger = createScopedLogger('MessageParser');
 
@@ -103,8 +103,8 @@ export class StreamingMessageParser {
         if (actionsBlockEnd !== -1) {
           const actionsBlockContent = input.slice(i + BOLT_QUICK_ACTIONS_OPEN.length, actionsBlockEnd);
 
-          // Find all <bolt-quick-action ...>label</bolt-quick-action> inside
-          const quickActionRegex = /<bolt-quick-action([^>]*)>([\s\S]*?)<\/bolt-quick-action>/g;
+          // Find all <UnQStudio-quick-action ...>label</UnQStudio-quick-action> inside
+          const quickActionRegex = /<UnQStudio-quick-action([^>]*)>([\s\S]*?)<\/UnQStudio-quick-action>/g;
           let match;
           const buttons = [];
 
@@ -387,7 +387,7 @@ function camelToDashCase(input: string) {
 function createQuickActionElement(props: Record<string, string>, label: string) {
   const elementProps = [
     'class="__boltQuickAction__"',
-    'data-bolt-quick-action="true"',
+    'data-UnQStudio-quick-action="true"',
     ...Object.entries(props).map(([key, value]) => `data-${camelToDashCase(key)}=${JSON.stringify(value)}`),
   ];
 
@@ -397,5 +397,5 @@ function createQuickActionElement(props: Record<string, string>, label: string) 
 }
 
 function createQuickActionGroup(buttons: string[]) {
-  return `<div class=\"__boltQuickAction__\" data-bolt-quick-action=\"true\">${buttons.join('')}</div>`;
+  return `<div class=\"__boltQuickAction__\" data-UnQStudio-quick-action=\"true\">${buttons.join('')}</div>`;
 }

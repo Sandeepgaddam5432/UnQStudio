@@ -113,7 +113,7 @@ export function GitHubAuthDialog({ isOpen, onClose }: GitHubAuthDialogProps) {
                           href="https://github.com/settings/tokens"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-purple-500 hover:underline"
+                          className="text-[var(--unq-elements-item-contentAccent)] hover:underline"
                         >
                           github.com/settings/tokens
                         </a>
@@ -147,7 +147,7 @@ export function GitHubAuthDialog({ isOpen, onClose }: GitHubAuthDialogProps) {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                      className="w-full py-2 bg-[var(--unq-elements-button-primary-background)] hover:bg-[var(--unq-elements-button-primary-backgroundHover)] text-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                     >
                       {isSubmitting ? 'Connecting...' : 'Connect to GitHub'}
                     </button>

@@ -1,5 +1,5 @@
-appId: com.stackblitz.bolt.diy
-productName: Bolt Local
+appId: com.unqstudio.app
+productName: UnQStudio Local
 directories:
   buildResources: build
   output: dist
@@ -55,9 +55,9 @@ npmRebuild: false
 
 publish:
   provider: github
-  owner: Derek-X-Wang
-  repo: bolt.local
-  private: true
+  owner: Sandeepgaddam5432
+  repo: UnQStudio
+  private: false
   releaseType: release
 
 electronDownload:

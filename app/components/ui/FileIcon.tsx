@@ -199,7 +199,7 @@ export function FileIcon({ filename, size = 'md', className }: FileIconProps) {
     }
 
     if (['php'].includes(extension)) {
-      return 'text-purple-500';
+      return 'text-[var(--unq-elements-item-contentAccent)]';
     }
 
     if (['rb', 'ruby'].includes(extension)) {
@@ -223,7 +223,7 @@ export function FileIcon({ filename, size = 'md', className }: FileIconProps) {
     }
 
     if (['kt', 'kotlin'].includes(extension)) {
-      return 'text-purple-400';
+      return 'text-[var(--unq-elements-item-contentAccent)]';
     }
 
     if (['dart'].includes(extension)) {
@@ -232,7 +232,7 @@ export function FileIcon({ filename, size = 'md', className }: FileIconProps) {
 
     // Config files
     if (['yml', 'yaml'].includes(extension)) {
-      return 'text-purple-300';
+      return 'text-[var(--unq-elements-item-contentAccent)]';
     }
 
     if (['xml'].includes(extension)) {

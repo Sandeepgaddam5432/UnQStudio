@@ -85,7 +85,7 @@ export function TabsWithSlider({
             tab.id === activeTab
               ? classNames('text-white shadow-sm shadow-purple-500/20', activeTabClassName)
               : classNames(
-                  'bg-bolt-elements-background-depth-2 dark:bg-bolt-elements-background-depth-3 text-bolt-elements-textPrimary dark:text-bolt-elements-textPrimary-dark hover:bg-bolt-elements-background-depth-3 dark:hover:bg-bolt-elements-background-depth-4 border border-bolt-elements-borderColor dark:border-bolt-elements-borderColor-dark',
+                  'bg-unq-elements-background-depth-2 dark:bg-unq-elements-background-depth-3 text-unq-elements-textPrimary dark:text-unq-elements-textPrimary-dark hover:bg-unq-elements-background-depth-3 dark:hover:bg-unq-elements-background-depth-4 border border-unq-elements-borderColor dark:border-unq-elements-borderColor-dark',
                   tabClassName,
                 ),
           )}
@@ -99,7 +99,7 @@ export function TabsWithSlider({
 
       {/* Animated slider */}
       <motion.div
-        className={classNames('absolute bottom-0 left-0 h-10 rounded-lg bg-purple-500 -z-10', sliderClassName)}
+        className={classNames('absolute bottom-0 left-0 h-10 rounded-lg bg-[var(--unq-elements-button-primary-background)] -z-10', sliderClassName)}
         initial={false}
         animate={{
           width: sliderDimensions.width,

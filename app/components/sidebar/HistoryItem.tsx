@@ -98,7 +98,7 @@ export function HistoryItem({
           />
           <button
             type="submit"
-            className="i-ph:check h-4 w-4 text-gray-500 hover:text-purple-500 transition-colors"
+            className="i-ph:check h-4 w-4 text-gray-500 hover:text-[var(--unq-elements-item-contentAccent)] transition-colors"
             onMouseDown={handleSubmit}
           />
         </form>
@@ -178,7 +178,7 @@ const ChatActionButton = forwardRef(
         <button
           ref={ref}
           type="button"
-          className={`text-gray-400 dark:text-gray-500 hover:text-purple-500 dark:hover:text-purple-400 transition-colors ${icon} ${className ? className : ''}`}
+          className={`text-gray-400 dark:text-gray-500 hover:text-[var(--unq-elements-item-contentAccent)] dark:hover:text-[var(--unq-elements-item-contentAccent)] transition-colors ${icon} ${className ? className : ''}`}
           onClick={onClick}
         />
       </WithTooltip>

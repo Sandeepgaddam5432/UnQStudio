@@ -332,7 +332,7 @@ export const Menu = () => {
         style={{ width: '340px' }}
         className={classNames(
           'flex selection-accent flex-col side-menu fixed top-0 h-full rounded-r-2xl',
-          'bg-white dark:bg-gray-950 border-r border-bolt-elements-borderColor',
+'bg-white dark:bg-gray-950 border-r border-unq-elements-borderColor',
           'shadow-sm text-sm',
           isSettingsOpen ? 'z-40' : 'z-sidebar',
         )}
@@ -364,7 +364,7 @@ export const Menu = () => {
             <div className="flex gap-2">
               <a
                 href="/"
-                className="flex-1 flex gap-2 items-center bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 hover:bg-purple-100 dark:hover:bg-purple-500/20 rounded-lg px-4 py-2 transition-colors"
+                className="flex-1 flex gap-2 items-center bg-unq-elements-item-backgroundAccent dark:bg-[var(--unq-elements-button-primary-background)]/10 text-[var(--unq-elements-item-contentAccent)] dark:text-[var(--unq-elements-item-contentAccent)] hover:bg-purple-100 dark:hover:bg-[var(--unq-elements-button-primary-background)]/20 rounded-lg px-4 py-2 transition-colors"
               >
                 <span className="inline-block i-ph:plus-circle h-4 w-4" />
                 <span className="text-sm font-medium">Start new chat</span>
@@ -374,7 +374,7 @@ export const Menu = () => {
                 className={classNames(
                   'flex gap-1 items-center rounded-lg px-3 py-2 transition-colors',
                   selectionMode
-                    ? 'bg-purple-600 dark:bg-purple-500 text-white border border-purple-700 dark:border-purple-600'
+                    ? 'bg-[var(--unq-elements-button-primary-backgroundHover)] dark:bg-[var(--unq-elements-button-primary-background)] text-white border border-purple-700 dark:border-purple-600'
                     : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700',
                 )}
                 aria-label={selectionMode ? 'Exit selection mode' : 'Enter selection mode'}
